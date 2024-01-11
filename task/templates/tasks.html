@@ -1,0 +1,31 @@
+<head>
+    
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% load static %}
+
+    {% block content %}
+    
+
+    <h1> Tareas </h1>
+
+    <img src='{% static "verano_1.png" %}' width="200">
+    <ul>
+
+        {% for t in tareas %}
+            <li>
+                <a href="{% url 'tarea_detail' t.id %}">
+                     {{t.title}} 
+                </a>
+            </li>
+            <li><a> {{t.description}} </a></li>
+            <li><a> Usuario:  {{t.user}} </a></li>
+            {% endfor %}
+    
+    </ul>
+
+
+    {% endblock %}
+</body>
